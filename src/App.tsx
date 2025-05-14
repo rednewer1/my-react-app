@@ -1,16 +1,14 @@
 // src/App.tsx
-import React from 'react';
-import Message from './components/Message';
+import Layout from './components/Layout/Layout';
+import Section from './components/Section/Section';
+import Article from './components/Article/Article';
 
-function App() {
-  const messageText = "Привет, это мой первый React + TypeScript компонент!";
-
+export default function App() {
   return (
-    <div>
-      <h1>Моё React приложение</h1>
-      <Message text={messageText} />
-    </div>
+    <Layout>
+      <Section>
+        <Article title="Заголовок статьи" content="Описание новости..." />
+      </Section>
+    </Layout>
   );
 }
-
-export default App;
