@@ -1,11 +1,20 @@
 // src/App.tsx
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage/HomePage';
+import CardsPage from './pages/CardsPage/CardsPage';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import Layout from './components/Layout/Layout';
-import CardList from './components/CardList/CardList';
 
 export default function App() {
   return (
-    <Layout>
-      <CardList />
-    </Layout>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/cards" element={<CardsPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 }

@@ -9,36 +9,24 @@ type Post = {
   body: string;
 };
 
-export default function CardList() {
+type CardListProps = {
+  limit?: number;
+};
+
+export default function CardList({ limit = 10 }: CardListProps) {
   const [cards, setCards] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/posts?_limit=6 ')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Ошибка при загрузке данных');
-        }
-        return response.json();
-      })
+    fetch(`https://jsonplaceholder.typicode.com/posts?_limit= ${limit}`)
+      .then((res) => res.json())
       .then((data) => {
         setCards(data);
         setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
       });
-  }, []);
+  }, [limit]);
 
-  if (loading) {
-    return <div>Загрузка...</div>;
-  }
-
-  if (error) {
-    return <div>Ошибка: {error}</div>;
-  }
+  if (loading) return <div>Загрузка...</div>;
 
   return (
     <div className={styles.cardList}>
