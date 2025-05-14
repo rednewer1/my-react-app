@@ -1,19 +1,17 @@
 // src/components/Layout/Layout.tsx
-import styles from './Layout.module.css';
 import Header from '../Header/Header';
-import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
+import styles from './Layout.module.css';
+import CardList from '../CardList/CardList';
 
-type LayoutProps = {
-  children: React.ReactNode;
-};
-
-export default function Layout({ children }: LayoutProps) {
+export default function Layout() {
   return (
     <div className={styles.layout}>
       <Header />
-      <Navbar />
-      <main>{children}</main>
+      <main className={styles.main}>
+        <h2>Список карточек</h2>
+        <CardList />
+      </main>
       <Footer />
     </div>
   );

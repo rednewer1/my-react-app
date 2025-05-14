@@ -1,14 +1,11 @@
 // src/App.tsx
 import Layout from './components/Layout/Layout';
-import Section from './components/Section/Section';
-import Article from './components/Article/Article';
+import CardList from './components/CardList/CardList';
 
 export default function App() {
   return (
     <Layout>
-      <Section>
-        <Article title="Заголовок статьи" content="Описание новости..." />
-      </Section>
+      <CardList />
     </Layout>
   );
 }
