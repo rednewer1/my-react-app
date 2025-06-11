@@ -1,47 +1,22 @@
 // src/components/CardList/CardList.tsx
-import React, { useState, useEffect } from 'react';
-import './CardList.css';
-
-type Card = {
-  id: number;
-  title: string;
-  body: string;
-};
+import React from 'react';
+import { useFetchCards } from '../../hooks/useFetchCards';
+import styles from './CardList.module.css'; 
 
 type Props = {
   limit?: number;
 };
 
 const CardList = ({ limit = 10 }: Props) => {
-  const [cards, setCards] = useState<Card[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/posts?_limit=${limit}`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setCards(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, [limit]);
+  const { cards, loading, error } = useFetchCards(limit);
 
   if (loading) return <div>Загрузка данных...</div>;
-  if (error) return <div className="error-message">Ошибка загрузки: {error}</div>;
+  if (error) return <div className={styles.error}>Ошибка загрузки: {error}</div>;
 
   return (
-    <div className="card-list">
+    <div className={styles.cardList}>
       {cards.map((card) => (
-        <div key={card.id} className="card">
+        <div key={card.id} className={styles.cardItem}>
           <h3>{card.title}</h3>
           <p>{card.body}</p>
         </div>

@@ -1,15 +1,15 @@
 // src/components/Layout/Layout.tsx
 import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
-import './Layout.css';
+import styles from './Layout.module.css'; // ✅ Подключаем CSS-модуль
 
 const Layout = () => {
   return (
-    <div className="layout">
-      {/* Header */}
-      <header className="header">
+    <div className={styles.layout}>
+      {/* Шапка */}
+      <header>
         <h1>
-          <Link to="/" className="logo">React Карточки</Link>
+          <Link to="/">React Карточки</Link>
         </h1>
         <nav>
           <ul>
@@ -19,13 +19,13 @@ const Layout = () => {
         </nav>
       </header>
 
-      {/* Main Content */}
-      <main className="main-content">
-        <Outlet /> {/* Здесь будут отображаться дочерние маршруты */}
+      {/* Основное содержимое */}
+      <main className={styles.main}>
+        <Outlet />
       </main>
 
-      {/* Footer */}
-      <footer className="footer">
+      {/* Подвал */}
+      <footer>
         <p>&copy; 2025 React App</p>
       </footer>
     </div>
