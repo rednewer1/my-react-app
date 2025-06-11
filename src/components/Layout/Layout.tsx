@@ -1,26 +1,35 @@
 // src/components/Layout/Layout.tsx
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
-import { Link } from 'react-router-dom';
-import styles from './Layout.module.css';
+import React from 'react';
+import { Outlet, Link } from 'react-router-dom';
+import './Layout.css';
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+const Layout = () => {
   return (
-    <div className={styles.layout}>
-      <header className={styles.header}>
-        <h1><Link to="/">Мой сайт</Link></h1>
+    <div className="layout">
+      {/* Header */}
+      <header className="header">
+        <h1>
+          <Link to="/" className="logo">React Карточки</Link>
+        </h1>
         <nav>
-          <Link to="/cards">Карточки</Link>
+          <ul>
+            <li><Link to="/">Главная</Link></li>
+            <li><Link to="/cards">Карточки</Link></li>
+          </ul>
         </nav>
       </header>
 
-      <main className={styles.main}>
-        {children}
+      {/* Main Content */}
+      <main className="main-content">
+        <Outlet /> {/* Здесь будут отображаться дочерние маршруты */}
       </main>
 
-      <footer className={styles.footer}>
-        <p>© 2025 Все права защищены</p>
+      {/* Footer */}
+      <footer className="footer">
+        <p>&copy; 2025 React App</p>
       </footer>
     </div>
   );
-}
+};
+
+export default Layout;
