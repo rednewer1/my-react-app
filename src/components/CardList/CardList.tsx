@@ -1,38 +1,48 @@
-// src/components/CardList/CardList.tsx
-import { useEffect, useState } from 'react';
-import Card from '../Card/Card';
-import styles from './CardList.module.css';
+import React, { useState, useEffect } from 'react';
+import Card from './Card';
 
-type Post = {
-  id: number;
-  title: string;
-  body: string;
-};
-
-type CardListProps = {
-  limit?: number;
-};
-
-export default function CardList({ limit = 10 }: CardListProps) {
-  const [cards, setCards] = useState<Post[]>([]);
+const CardList = () => {
+  const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/posts?_limit= ${limit}`)
-      .then((res) => res.json())
+    fetch('https://jsonplaceholder.typicode.com/posts?_limit=3')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
       .then((data) => {
         setCards(data);
         setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
       });
-  }, [limit]);
+  }, []);
 
-  if (loading) return <div>Загрузка...</div>;
+  if (loading) {
+    return <div>Загрузка данных...</div>;
+  }
+
+  if (error) {
+    return <div style={{ color: 'red' }}>Ошибка загрузки данных: {error}</div>;
+  }
 
   return (
-    <div className={styles.cardList}>
+    <div className="card-list">
       {cards.map((card) => (
-        <Card key={card.id} title={card.title} text={card.body} />
+        <Card
+          key={card.id}
+          title={card.title}
+          text={card.body}
+        />
       ))}
     </div>
   );
-}
+};
+
+export default CardList;
