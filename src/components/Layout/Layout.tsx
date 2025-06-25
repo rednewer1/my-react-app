@@ -1,34 +1,18 @@
 // src/components/Layout/Layout.tsx
 import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
-import styles from './Layout.module.css'; // ✅ Подключаем CSS-модуль
+import Header from '../Header/Header';
+import { Footer } from '../Footer/Footer';
 
-const Layout = () => {
+export const Layout: React.FC = () => {
   return (
-    <div className={styles.layout}>
-      {/* Шапка */}
-      <header>
-        <h1>
-          <Link to="/">React Карточки</Link>
-        </h1>
-        <nav>
-          <ul>
-            <li><Link to="/">Главная</Link></li>
-            <li><Link to="/cards">Карточки</Link></li>
-          </ul>
-        </nav>
-      </header>
-
-      {/* Основное содержимое */}
-      <main className={styles.main}>
-        <Outlet />
+    <>
+      <Header></Header>
+      <main>
+        <Outlet></Outlet>
       </main>
-
-      {/* Подвал */}
-      <footer>
-        <p>&copy; 2025 React App</p>
-      </footer>
-    </div>
+      <Footer></Footer>
+    </>
   );
 };
 

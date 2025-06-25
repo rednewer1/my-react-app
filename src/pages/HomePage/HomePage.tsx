@@ -1,12 +1,11 @@
 // src/pages/HomePage/HomePage.tsx
 import React from 'react';
-import CardList from '../../components/CardList/CardList';
+import {Main} from '../../components/Main/Main';
 
-const HomePage = () => {
+export const HomePage: React.FC = () => {
   return (
     <div>
-      <h2>Главная страница</h2>
-      <CardList limit={3} />
+      <Main></Main>
     </div>
   );
 };

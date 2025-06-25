@@ -1,28 +1,29 @@
 // src/components/CardList/CardList.tsx
 import React from 'react';
-import { useFetchCards } from '../../hooks/useFetchCards';
-import styles from './CardList.module.css'; 
+import gamesImg from '../../assets/images/games.png';
+import game2Img from '../../assets/images/game2.png';
 
-type Props = {
-  limit?: number;
-};
-
-const CardList = ({ limit = 10 }: Props) => {
-  const { cards, loading, error } = useFetchCards(limit);
-
-  if (loading) return <div>Загрузка данных...</div>;
-  if (error) return <div className={styles.error}>Ошибка загрузки: {error}</div>;
+const CardList = () => {
 
   return (
-    <div className={styles.cardList}>
-      {cards.map((card) => (
-        <div key={card.id} className={styles.cardItem}>
-          <h3>{card.title}</h3>
-          <p>{card.body}</p>
-        </div>
-      ))}
-    </div>
-  );
+              <div className="lenta-vert">
+            <div className="lenta">
+              <div className="game">
+                <img src={gamesImg} alt="игры" />
+              </div>
+              <div className="game2">
+                <img src={game2Img} alt="игры" />
+              </div>
+            </div>
+            <div className="lentabuttons">
+              <span className="slider-arrow" data-direction="left">
+                
+              </span>
+              <span className="slider-arrow" data-direction="right">
+                
+              </span>
+            </div>
+          </div>)
 };
 
 export default CardList;
