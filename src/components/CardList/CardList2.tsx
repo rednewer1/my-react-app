@@ -1,4 +1,5 @@
 import otzyvAva from '../../assets/images/otzyv ava.png';
+import otzivava2 from '../../assets/images/david.png';
 
 const CardList2 = () => {
     return (<div className="lenta-vert2">
@@ -6,32 +7,29 @@ const CardList2 = () => {
               <div className="otziv">
                 <img src={otzyvAva} alt="avatar" />
                 <div className="adam-vert2">
-                  <h1>Adam Smith</h1>
+                  <h1>Сергей Калиндев</h1>
                   <p>
-                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Imperdiet proin ut urna sit. Varius sed
-                    euismod at est, commodo sociis dolor. Elit, suspendisse leo id in eu ut arcu, malesuada. Nibh
-                    suspendisse mauris amet, facilisi. Elit, suspendisse leo id in eu ut arcu, malesuada. Nibh
-                    suspendisse mauris amet, facilisi.”
+                    "Отличный питомник. Большой выбор саженцев как плодовых, так и декоративных культур. Нам очень подробно все объяснили, как правило но сажать. Цены в питомнике весьма демократичные, что очень нас с мужем порадовало! Спасибо Вам огромное!"
                   </p>
                 </div>
               </div>
               <div className="otziv2">
-                <img src={otzyvAva} alt="avatar" />
+                <img src={otzivava2} alt="avatar" />
                 <div className="adam-vert2">
-                  <h1>Jane Doe</h1>
+                  <h1>Давид Урумбаев</h1>
                   <p>
-                    “Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                    totam rem aperiam.”
+                    "Прекрасный питомник! Очень доволен их саженцами, прижилось всё! Покупали саженцы несколько раз, впервые 8 лет назад. Уже пробуем яблоки и груши с их саженцев, а мы ведь севернее на 300 км! Китайка Керр очень долго не плодоносила, с трудом приживалась, но место я выбрал неудачное, а потом боялся повредить пересадкой.
+                    Так что рекомендую, очень ответственно в питомнике к саженцам относятся."
                   </p>
                 </div>
               </div>
             </div>
             <div className="lentabuttons2">
               <span className="slider-arrow2" data-direction="left">
-                
+                👈
               </span>
               <span className="slider-arrow2" data-direction="right">
-                
+                👉
               </span>
             </div>
           </div>)

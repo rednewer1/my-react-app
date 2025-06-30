@@ -1,7 +1,7 @@
 // src/components/CardList/CardList.tsx
 import React from 'react';
-import gamesImg from '../../assets/images/games.png';
-import game2Img from '../../assets/images/game2.png';
+import gamesImg from '../../assets/images/ур1.jpg';
+import game2Img from '../../assets/images/ур2.jpg';
 
 const CardList = () => {
 
@@ -17,10 +17,10 @@ const CardList = () => {
             </div>
             <div className="lentabuttons">
               <span className="slider-arrow" data-direction="left">
-                
+                👈
               </span>
               <span className="slider-arrow" data-direction="right">
-                
+                👉
               </span>
             </div>
           </div>)

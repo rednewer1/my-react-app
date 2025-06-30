@@ -1,46 +1,69 @@
-import React from 'react'
-import frameImg from '../../assets/images/Frame.png';
+//import frameImg from '../../assets/images/Frame.png';
+import { Link } from 'react-router-dom';
+import plantImg from '../../assets/images/plant.jpg';
 
 import mentorcityImg from '../../assets/images/mentorcity.png';
 
 import sponsors2 from '../../assets/images/sponsors2.png';
 import backForBooking from '../../assets/images/backforbook.png';
-import kolba from '../../assets/images/Vector.png';
+import apple from '../../assets/images/Apple Fruit.png';
+import pear from '../../assets/images/pear.png';
+import cherry from '../../assets/images/Cherry.png';
+import grape from '../../assets/images/Grape.png';
+import slivaa from '../../assets/images/sliva.png';
+import watermelon from '../../assets/images/Whole Watermelon.png';
+import raspberry from '../../assets/images/Raspberry.png';
 import back2 from '../../assets/images/back2.png';
-
 import CardList from '../CardList/CardList';
 import CardList2 from '../CardList/CardList2';
 
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 export const Main: React.FC = () => {
-    return (
-        
-      <main>
 
-    
-      <div className="preloader">
-        <div className="loader">loading</div>
-      </div>
+    const [loading, setLoading] = useState(true);
+    const location = useLocation();
+
+    useEffect(() => {
+        setLoading(true); // Показываем прелоадер при переходе
+
+        const timer = setTimeout(() => {
+            setLoading(false); // Скрываем прелоадер через 500мс
+        }, 500);
+
+        return () => clearTimeout(timer);
+    }, [location.pathname]); // Срабатывает при каждом переходе
+
+
+    return (
+      <main>
+  
+      {loading && (
+    <div className="preloader">
+      <div className="loader">loading</div>
+    </div>
+    )}
 
         <div className="Bridging">
-          <p>Bridging the gap between ideas and reality</p>
+          <p>У нас покупай, будет знатный урожай!</p>
           <div className="Bridgingimg">
-            <img src={frameImg} alt="Main Image" />
+            <img src={plantImg} alt="Main Image" />
           </div>
         </div>
 
         
         <div className="text1">
           <div className="aboutcompany">
-            <p>About company</p>
+            <p>О нас</p>
           </div>
           <div className="info1">
             <div className="lorem">
-              <p>Lorem ipsum dolor sit amet consectetur. Vestibulum nascetur vitae sapien</p>
+              <p>Мы рады приветствовать Вас на сайте магазина "Nixxsol"!
+Наш магазин  работает с 2006 года, а выращиванием и реализацией саженцев мы начали заниматься ещё в 1996 году!</p>
             </div>
             <div className="matiz">
               <p>
-                Mattis ornare tincidunt tempus mattis mi vel auctor ipsum venenatis. Tellus nunc scelerisque dictum
-                sagittis euismod urna egestas quam. In ornare nisl leo odio magna.
+                Вы можете приобрести у нас семена овощных и цветочных культур от лучших российских и зарубежных компаний, удобрения, средства защиты растений, почвогрунты, цветочные горшки. 
               </p>
             </div>
             <div className="number">
@@ -51,7 +74,7 @@ export const Main: React.FC = () => {
                   </p>
                 </div>
                 <div className="numbertext">
-                  <p>Happy clients</p>
+                  <p>Довольных клиентов</p>
                 </div>
               </div>
               <div className="years">
@@ -61,7 +84,7 @@ export const Main: React.FC = () => {
                   </p>
                 </div>
                 <div className="numbertext">
-                  <p>Years in business</p>
+                  <p>Лет в бизнесе</p>
                 </div>
               </div>
               <div className="total">
@@ -71,7 +94,7 @@ export const Main: React.FC = () => {
                   </p>
                 </div>
                 <div className="numbertext">
-                  <p>Total Members</p>
+                  <p>Участников</p>
                 </div>
               </div>
             </div>
@@ -81,34 +104,115 @@ export const Main: React.FC = () => {
         
         <div className="services">
           <img className="servicesback" src={back2} alt="Background" />
-          <p className="textt">Services</p>
+          <p className="textt">Доступный урожай</p>
           <div className="containers">
-            {Array(8)
-              .fill(0)
-              .map((_, i) => (
-                <div key={i} className="kartochka">
+            <div className="kartochka">
                   <div className="logo2">
-                    <img className="kolba" src={kolba} alt="лого колбы" />
+                    <img className="urozhai" src={apple} alt="лого яблока" />
                   </div>
                   <div className="kartochkatext">
-                    <p className="kartochkabold">Branding Design</p>
+                    <p className="kartochkabold">Яблоня</p>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tincidunt sed mi posuere in amet
-                      turpis nunc, nisl.
+                      Главные сорта: Успенское, Скала, Антоновка, Благовест, Штрейфлинг, Уэлси, Былина, Богатырь.
                     </p>
                   </div>
-                </div>
-              ))}
+              </div>
+
+                <div className="kartochka">
+                  <div className="logo2">
+                    <img className="urozhai" src={pear} alt="лого груши" />
+                  </div>
+                  <div className="kartochkatext">
+                    <p className="kartochkabold">Груша</p>
+                    <p>
+                      Главные сорта: Лада, Аллегро, Чижовская, Августовская роса, Памяти Яковлева, Просто Мария, Ника.
+                    </p>
+               </div>
+              </div>
+
+              <div className="kartochka">
+                  <div className="logo2">
+                    <img className="urozhai" src={cherry} alt="лого вишни" />
+                  </div>
+                  <div className="kartochkatext">
+                    <p className="kartochkabold">Вишня</p>
+                    <p>
+                      Главные сорта: Жуковская, Молодёжная, Морозовка, Тургеневка, Харитоновская, Шоколадница.
+                    </p>
+               </div>
+              </div>
+
+              <div className="kartochka">
+                  <div className="logo2">
+                    <img className="urozhai" src={slivaa} alt="лого сливы" />
+                  </div>
+                  <div className="kartochkatext">
+                    <p className="kartochkabold">Слива</p>
+                    <p>
+                      Главные сорта: Заречная раняя, Светлячок, Этюд, Алыча Злато Скифов, Алыча Кубанская Комета, Шоколадница.
+                    </p>
+               </div>
+              </div>
+
+              <div className="kartochka">
+                  <div className="logo2">
+                    <img className="urozhai" src={grape} alt="лого виноград" />
+                  </div>
+                  <div className="kartochkatext">
+                    <p className="kartochkabold">Виноград</p>
+                    <p>
+                      Главные сорта: Маленький принц, Тамерлан, Чернавка, Виксне, Детван, Смольяниновская.
+                    </p>
+               </div>
+              </div>
+
+              <div className="kartochka">
+                  <div className="logo2">
+                    <img className="urozhai" src={watermelon} alt="лого крыжовника" />
+                  </div>
+                  <div className="kartochkatext">
+                    <p className="kartochkabold">Крыжовник</p>
+                    <p>
+                      Главные сорта: Русский жёлтый, Серенада.
+                    </p>
+               </div>
+              </div>
+
+              <div className="kartochka">
+                  <div className="logo2">
+                    <img className="urozhai" src={slivaa} alt="лого сливы" />
+                  </div>
+                  <div className="kartochkatext">
+                    <p className="kartochkabold">Абрикос</p>
+                    <p>
+                      Главные сорта: Жигулевский сувенир, Краснощекий, Монастырский, Погремок, Эдельвейс.
+                    </p>
+               </div>
+              </div>
+
+              <div className="kartochka">
+                  <div className="logo2">
+                    <img className="urozhai" src={raspberry} alt="лого малина" />
+                  </div>
+                  <div className="kartochkatext">
+                    <p className="kartochkabold">Малина</p>
+                    <p>
+                      Главные сорта: Желтый гигант, Московский Гигант, Терентий, Сказка, Таруса.
+                    </p>
+               </div>
+              </div>
+
+
           </div>
         </div>
 
         
         <div className="portfolio">
           <div className="portfoliotext">
-            <h3>Portfolio</h3>
-            <p>Lorem ipsum dolor sit amet consectetur. Nunc viverra faucibus praesent elementum commodo.</p>
+            <h3>Галерея</h3>
+            <p>Кадры самых лучших урожаев.</p>
             <a href="#" className="button3">
-              More portfolio
+              Посмотреть
             </a>
           </div>
             <CardList></CardList>
@@ -122,11 +226,11 @@ export const Main: React.FC = () => {
         
         <div className="testimonials">
           <div className="testimonials_headline">
-            <h3>Testimonials</h3>
-            <p>Lorem ipsum dolor sit amet consectetur. Nunc viverra faucibus praesent elementum commodo.</p>
-            <a href="#" className="button3">
-              Explore more 
-            </a>
+            <h3>Отзыв</h3>
+            <p>Самые лучшие отзывы нашей работы. 👍</p>
+            <Link to="/site2otziv" className="button3">
+              Посмотреть 
+            </Link>
           </div>
           <CardList2></CardList2>
         </div>
@@ -135,29 +239,28 @@ export const Main: React.FC = () => {
         <div className="booking">
           <img src={backForBooking} className="backforbooking" alt="Booking Background" />
           <div className="bookingtext">
-            <p>Testimonials _______</p>
-            <h3>Book a meeting with us</h3>
+            
+            <h3>Оставьте отзыв</h3>
             <p>
-              Mattis ornare tincidunt tempus mattis mi vel auctor ipsum venenatis. Tellus nunc scelerisque dictum
-              sagittis euismod urna egestas quam. In ornare nisl leo odio magna.
+              Уважаемые садоводы, здесь вы можете оставить свой отзыв, пожелания или предложения о работе нашего питомника или задать волнующие вас вопросы, касающиеся саженцев и не только. Оставив отзыв, вы помогаете людям определиться с выбором, а нам - улучшить сервис. Спасибо!
             </p>
           </div>
           <div className="form">
             <form>
               <div>
-                <input type="text" id="name" name="name" placeholder="Name" required />
-                <input type="email" id="email" name="email" placeholder="Email" required />
-                <input type="tel" id="phone" name="phone" placeholder="Phone (Optional)" />
+                <input type="text" id="name" name="name" placeholder="Имя" required />
+                <input type="email" id="email" name="email" placeholder="Е-маил" required />
+                <input type="tel" id="phone" name="phone" placeholder="Номер телефона" />
                 <input
                   type="text"
                   id="description"
                   name="description"
-                  placeholder="Tell us about the project you are working on (Optional)"
+                  placeholder="Расскажите, довольны ли вы нашими продуктами?"
                 />
               </div>
               <div>
                 <button type="submit" className="button-small">
-                  Submit
+                  Отправить
                 </button>
               </div>
             </form>

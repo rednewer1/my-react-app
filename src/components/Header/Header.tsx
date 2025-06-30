@@ -1,27 +1,31 @@
 // src/components/Header.tsx
 import React from 'react';
 import logo from '../../assets/images/Component 3.png';
-const Header = () => {
+import site2otziv from '../../pages/site2otziv/site2otziv';
+import { Link } from 'react-router-dom';
+
+const Header: React.FC = () => {
   return (
       <header>
-        <div className="logotype">
-          <a href="#">
+        <Link to="/" className="logotype">      
             <img src={logo} alt="Logotype" />
-          </a>
-        </div>
+      
+        </Link>
         <div className="headerbuttons">
           <nav className="main-menu">
             <ul className="menu">
               <li className="main-item">
-                <a href="#" className="button">
-                  About
-                </a>
+                
+                <Link to="/aboutussite" className="button">
+                  О нас
+                </Link>
+                
               </li>
               <li className="main-item">
-                <a href="#" className="button">
-                  IT Services
-                </a>
-                <ul className="sub-menu">
+                <Link to="/site2otziv" className="button">
+                  Отзывы
+                </Link>
+                {/* <ul className="sub-menu">
                   <li>
                     <a href="#">IT Services</a>
                   </li>
@@ -31,17 +35,19 @@ const Header = () => {
                   <li>
                     <a href="#">IT Services</a>
                   </li>
-                </ul>
+                </ul> */}
               </li>
               <li className="main-item">
                 <a href="#" className="button">
-                  Portfolio
+                  Галерея
                 </a>
               </li>
               <li className="main-item">
+                
                 <a href="#" className="button2" id="openModal">
-                  Contact Us
+                Свяжитесь
                 </a>
+                
               </li>
             </ul>
           </nav>

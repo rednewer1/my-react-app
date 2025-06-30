@@ -75,10 +75,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     updateSliderOtziv(); // Инициализация слайдера для отзывов
     // Прелоадер
+
     setTimeout(() => {
         const preloader = document.querySelector('.preloader'); // Находим наш элемент прелоадера
         preloader.style.display = 'none'; // Скрываем прелоадер
     }, 500); // Задержка 500 мс 
+
+    
     // Форма регистрации
     const modal = document.getElementById('myModal');
     const openModalButton = document.getElementById('openModal');

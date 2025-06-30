@@ -14,7 +14,7 @@ export const Footer = () => {
           <div className="contacts">
             <div className="contactadress">
               <img src={phoneIcon} className="iconn" alt="Phone" />
-              <p>+92 300 1234567</p>
+              <p>+7-917-719-06-00</p>
             </div>
             <div className="contactadress">
               <img src={mailIcon} className="iconn" alt="Email" />
@@ -22,29 +22,29 @@ export const Footer = () => {
             </div>
             <div className="contactadress">
               <img src={gpsIcon} className="iconn" alt="Location" />
-              <p>Lorem ipsum dolor sit amet consectetur. Dui libero lectus pulvinar mattis a.</p>
+              <p>г. Йошкар-Ола, ул. Строителей д.14</p>
             </div>
           </div>
           <div className="navigation">
             <div className="fourbuttons">
-              <p>About</p>
-              <p>Services</p>
-              <p>Portfolio</p>
-              <p>Contact Us</p>
+              <p>О нас</p>
+              <p>Отзывы</p>
+              <p>Галерея</p>
+              <p>Свяжитесь</p>
             </div>
             <div className="stayinconnection">
-              <h3>Stay in Connection</h3>
+              <h3>Оставайтесь на связи</h3>
               <div className="emailaddress">
-                <input type="email" id="email" name="email" placeholder="Email Address" required />
+                <input type="email" id="email" name="email" placeholder="Е-маил" required />
                 <button type="submit" className="button-footer">
-                  Contact Us
+                  Обратная связь
                 </button>
               </div>
             </div>
           </div>
         </div>
         <div className="red">
-          <p>© 2022 Nixxsol All Rights Reserved.</p>
+          <p>© 2025 Nixxsol Все права защищены.</p>
           <div className="socseti">
             <img src={facebookIcon} alt="Facebook" className="socialmediaicon" />
             <img src={instagramIcon} alt="Instagram" className="socialmediaicon" />
