@@ -1,14 +1,14 @@
 // src/pages/site2otziv.tsx
 import React from 'react';
-import './aboutussite.module.css';
+import styles from './aboutussite.module.css';
 
-
-const aboutussite: React.FC = () => {
+const AboutUsSite: React.FC = () => {
   return (
-    <div className="container about-page" style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
+    <div className={`${styles.container} ${styles['about-page']}`}>
+
       <h1>О нас</h1>
       <p>Уважаемые садоводы!</p>
-      <p>Мы рады приветствовать Вас на сайте магазина "Товары для сада и дома"!</p>
+      <p>Мы рады приветствовать Вас на сайте магазина "TOVSAD"!</p>
       <p>Наш магазин работает с 2006 года, а выращиванием и реализацией саженцев мы начали заниматься ещё в 1996 году!</p>
       <p>Магазин наш — для увлечённых садоводством людей.</p>
       <p>Вы можете приобрести у нас семена овощных и цветочных культур от лучших российских и зарубежных компаний, удобрения, средства защиты растений, почвогрунты, цветочные горшки.</p>
@@ -21,4 +21,7 @@ const aboutussite: React.FC = () => {
   );
 };
 
-export default aboutussite;
+export default AboutUsSite;
+
+
+

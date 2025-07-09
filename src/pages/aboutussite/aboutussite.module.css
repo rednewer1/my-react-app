@@ -1,3 +1,9 @@
-main{
-    margin-bottom: 100px;
+.main {
+  margin-bottom: 100px;
+}
+
+.container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
 }

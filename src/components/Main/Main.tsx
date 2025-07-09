@@ -58,7 +58,7 @@ export const Main: React.FC = () => {
           </div>
           <div className="info1">
             <div className="lorem">
-              <p>Мы рады приветствовать Вас на сайте магазина "Nixxsol"!
+              <p>Мы рады приветствовать Вас на сайте магазина "TOVSAD"!
 Наш магазин  работает с 2006 года, а выращиванием и реализацией саженцев мы начали заниматься ещё в 1996 году!</p>
             </div>
             <div className="matiz">
@@ -113,7 +113,7 @@ export const Main: React.FC = () => {
                   <div className="kartochkatext">
                     <p className="kartochkabold">Яблоня</p>
                     <p>
-                      Главные сорта: Успенское, Скала, Антоновка, Благовест, Штрейфлинг, Уэлси, Былина, Богатырь.
+                      Главные сорта: Успенское. Скала. Антоновка. Благовест. Штрейфлинг. Уэлси. Былина. Богатырь.
                     </p>
                   </div>
               </div>
@@ -125,7 +125,7 @@ export const Main: React.FC = () => {
                   <div className="kartochkatext">
                     <p className="kartochkabold">Груша</p>
                     <p>
-                      Главные сорта: Лада, Аллегро, Чижовская, Августовская роса, Памяти Яковлева, Просто Мария, Ника.
+                      Главные сорта: Лада. Аллегро. Чижовская. Августовская роса. Памяти Яковлева. Просто Мария. Ника.
                     </p>
                </div>
               </div>
@@ -137,7 +137,7 @@ export const Main: React.FC = () => {
                   <div className="kartochkatext">
                     <p className="kartochkabold">Вишня</p>
                     <p>
-                      Главные сорта: Жуковская, Молодёжная, Морозовка, Тургеневка, Харитоновская, Шоколадница.
+                      Главные сорта: Жуковская. Молодёжная. Морозовка. Тургеневка. Харитоновская. Шоколадница.
                     </p>
                </div>
               </div>
@@ -149,7 +149,7 @@ export const Main: React.FC = () => {
                   <div className="kartochkatext">
                     <p className="kartochkabold">Слива</p>
                     <p>
-                      Главные сорта: Заречная раняя, Светлячок, Этюд, Алыча Злато Скифов, Алыча Кубанская Комета, Шоколадница.
+                      Главные сорта: Заречная раняя. Светлячок. Этюд. Алыча Злато Скифов. Алыча Кубанская Комета. Шоколадница.
                     </p>
                </div>
               </div>
@@ -161,7 +161,7 @@ export const Main: React.FC = () => {
                   <div className="kartochkatext">
                     <p className="kartochkabold">Виноград</p>
                     <p>
-                      Главные сорта: Маленький принц, Тамерлан, Чернавка, Виксне, Детван, Смольяниновская.
+                      Главные сорта: Маленький принц. Тамерлан. Чернавка. Виксне. Детван. Смольяниновская.
                     </p>
                </div>
               </div>
@@ -173,7 +173,7 @@ export const Main: React.FC = () => {
                   <div className="kartochkatext">
                     <p className="kartochkabold">Крыжовник</p>
                     <p>
-                      Главные сорта: Русский жёлтый, Серенада.
+                      Главные сорта: Русский жёлтый. Серенада.
                     </p>
                </div>
               </div>
@@ -185,7 +185,7 @@ export const Main: React.FC = () => {
                   <div className="kartochkatext">
                     <p className="kartochkabold">Абрикос</p>
                     <p>
-                      Главные сорта: Жигулевский сувенир, Краснощекий, Монастырский, Погремок, Эдельвейс.
+                      Главные сорта: Жигулевский сувенир. Краснощекий. Монастырский. Погремок. Эдельвейс.
                     </p>
                </div>
               </div>
@@ -197,7 +197,7 @@ export const Main: React.FC = () => {
                   <div className="kartochkatext">
                     <p className="kartochkabold">Малина</p>
                     <p>
-                      Главные сорта: Желтый гигант, Московский Гигант, Терентий, Сказка, Таруса.
+                      Главные сорта: Желтый гигант. Московский Гигант. Терентий. Сказка. Таруса.
                     </p>
                </div>
               </div>
@@ -211,9 +211,10 @@ export const Main: React.FC = () => {
           <div className="portfoliotext">
             <h3>Галерея</h3>
             <p>Кадры самых лучших урожаев.</p>
-            <a href="#" className="button3">
-              Посмотреть
-            </a>
+            <Link to="/Gallery" className="button3">
+            Посмотреть
+            </Link>
+              
           </div>
             <CardList></CardList>
         </div>
@@ -275,16 +276,16 @@ export const Main: React.FC = () => {
             
       <div id="myModal" className="modal">
         <div className="modal-content">
-          <h3>Contact Us</h3>
+          <h3>Свяжитесь</h3>
           <form id="contactForm">
-            <input type="text" id="name" name="name" placeholder="Name" required />
-            <input type="email" id="email" name="email" placeholder="Email" required />
-            <input type="tel" id="phone" name="phone" placeholder="Phone (Optional)" />
+            <input type="text" id="name" name="name" placeholder="Имя" required />
+            <input type="email" id="email" name="email" placeholder="Е-маил" required />
+            <input type="tel" id="phone" name="phone" placeholder="Номер телефона" />
             <input
               type="text"
               id="description"
               name="description"
-              placeholder="Tell us about the project you are working on (Optional)"
+              placeholder="Оставьте отзыв!"
             />
             <div>
               <button type="submit">OK</button>

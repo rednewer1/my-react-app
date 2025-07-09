@@ -1,5 +1,15 @@
 main{
-    margin-bottom: 500px;
+    margin-bottom: 100px;
+} 
+
+.otzivs{
+    display: flex;
+}
+
+.otzivreview{
+    margin: 30px;
+    display: flex;
+    max-width: 40%;
 }
 
 .otzivreview img {
@@ -20,7 +30,9 @@ main{
     font-size: 36px;
 }
 
-.otzivreview, .otziv2review {
+
+
+.otziv2review {
     top: 0;
     left: 0;
     width: 600px;
@@ -34,9 +46,18 @@ main{
     transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
 }
 
+
+
 .otzivreview img, .otziv2review img {
     width: 100px;
     object-fit: contain;
     height: 100px;
     margin: 20px;
+}
+
+@media (max-width: 768px) {
+    .otzivs{
+        display: flex;
+        flex-direction: column;
+    }
 }

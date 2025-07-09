@@ -1,0 +1,17 @@
+.gallimg img{
+    height: 340px;
+    max-width: fit-content;
+    margin: 20px;
+}
+.gallimg{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+@media (max-width: 768px){
+    .gallimg{
+    flex-direction: column;
+
+}
+}

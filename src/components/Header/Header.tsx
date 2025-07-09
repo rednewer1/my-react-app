@@ -1,7 +1,6 @@
 // src/components/Header.tsx
 import React from 'react';
 import logo from '../../assets/images/Component 3.png';
-import site2otziv from '../../pages/site2otziv/site2otziv';
 import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
@@ -25,22 +24,13 @@ const Header: React.FC = () => {
                 <Link to="/site2otziv" className="button">
                   Отзывы
                 </Link>
-                {/* <ul className="sub-menu">
-                  <li>
-                    <a href="#">IT Services</a>
-                  </li>
-                  <li>
-                    <a href="#">IT Services</a>
-                  </li>
-                  <li>
-                    <a href="#">IT Services</a>
-                  </li>
-                </ul> */}
+                
               </li>
               <li className="main-item">
-                <a href="#" className="button">
+                <Link to="/Gallery" className="button">
                   Галерея
-                </a>
+                </Link>
+
               </li>
               <li className="main-item">
                 

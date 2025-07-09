@@ -1,5 +1,146 @@
-import styles from './Header/Header.module.css'
+.logotype{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+    position: absolute;
+    width: 216px;
+    height: 50.43px;
+    left: 153px;
+    top: 36px;
+    right: auto;
+}
 
-function Header() {
-  return <header className={styles.header}>Мой сайт</header>
+ .headerbuttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 26px;
+    top: 26px;
+    position: fixed;
+    width: 410px;
+    height: 62px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(15px);
+    border-radius: 14px;
+    right: 0;  
+    left: auto; 
+    margin-right: 160px;
+    z-index: 3;
+}
+
+nav .main-item .sub-menu {
+    display: none;
+    position: absolute;
+
+
+    background-color: white;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  nav .main-item:hover .sub-menu {
+    display: block;
+    margin-top: 2%;
+    position: left;
+  }
+
+  .form form div{
+    width: fit-content;
+}
+
+/* Стили для формы */
+.form form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+    max-width: fit-content;
+    margin-top: 50px;
+    align-items: center;
+}
+
+/* Стили для всех полей ввода */
+.form input {
+    background-color:rgba(255, 255, 255, 0.01); /* Прозрачный белый фон */
+    border: 2px solid rgba(255, 255, 255, 0.7); /* Белая обводка с 70% прозрачностью */
+    padding: 10px;
+    margin-bottom: 15px;
+    color: white; /* Белый текст */
+    font-size: 16px;
+    outline: none; /* Убираем стандартную обводку при фокусировке */
+    position: relative; /* Убедимся, что поля не перекрываются */
+    z-index: 3; /* Обеспечиваем, чтобы поля были выше других элементов */
+    width: 500px;
+}
+
+/* Стили для placeholder (имя полей) */
+.form input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Белый цвет с 70% прозрачностью для текста в поле */
+}
+
+/* Стили для кнопки Submit */
+.form button[type="submit"] {
+    background-color: #18a41d; /* Красный цвет кнопки */
+    color: white; /* Белый цвет текста на кнопке */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Добавим немного эффекта на hover для кнопки */
+.form button[type="submit"]:hover {
+    background-color: #0b4b0d; 
+} 
+
+body {
+    background-color: #ffffff;
+} 
+
+.button2{
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #18a41d;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+
+  .button3, .button2 {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+
+  nav .main-item .sub-menu{
+    top: 33px;
+    left: 82px;
+}
+
+.main-item a{
+    font-size: 0.8rem;
+    text-decoration: none;
+  }
+  .headerbuttons {
+    width: 90%;
+    margin-right: 0;
+    right: 5%;
+    left: 5%;
+  }
+
+  .logotype {
+    left: 80px;
+    top: 20px;
+    width: auto;
+    margin-top: 80px;
+  }
 }
